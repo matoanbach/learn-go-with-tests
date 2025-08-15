@@ -4,3 +4,10 @@
     - People say forget about GOPATH in modern Go.
 - go mod init <modulepath>
     - it is to initialize a new module the current directory
+
+## Go Linting
+- golangci-lint can be used to detect style issues, bugs, and potential improvements in your code.
+- run the below to install:
+    ```bash
+    brew install golangci-lint
+    ```
