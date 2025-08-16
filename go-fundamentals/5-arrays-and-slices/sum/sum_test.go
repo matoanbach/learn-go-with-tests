@@ -44,3 +44,9 @@ func BenchmarkSum(b *testing.B) {
 		Sum(numbers)
 	}
 }
+
+func BenchmarkSumAll(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SumAll([]int{1, 2}, []int{0, 9})
+	}
+}
