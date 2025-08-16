@@ -18,3 +18,17 @@ func SumAll(numbersToSum ...[]int) []int {
 
 	return output
 }
+
+func SumAllTails(numbersToSumTails ...[]int) []int {
+	lengthOfNumbers := len(numbersToSumTails)
+	output := make([]int, lengthOfNumbers)
+	for i, listOfNumbers := range numbersToSumTails {
+		if len(listOfNumbers) == 0 {
+			output[i] = 0
+		} else {
+			output[i] = Sum(listOfNumbers[1:])
+		}
+	}
+
+	return output
+}
