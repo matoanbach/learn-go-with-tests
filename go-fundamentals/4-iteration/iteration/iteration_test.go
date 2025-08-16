@@ -1,0 +1,22 @@
+package iteration
+
+import "testing"
+
+func TestRepeat(t *testing.T) {
+	t.Run("test one character", func(t *testing.T) {
+		repeated := Repeat("a", 1)
+		expected := "a"
+
+		if repeated != expected {
+			t.Errorf("expected %q but got %q", expected, repeated)
+		}
+	})
+	t.Run("test many characters", func(t *testing.T) {
+		repeated := Repeat("a", 5)
+		expected := "aaaaa"
+
+		if repeated != expected {
+			t.Errorf("expected %q but got %q", expected, repeated)
+		}
+	})
+}
