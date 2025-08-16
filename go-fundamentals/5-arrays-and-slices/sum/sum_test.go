@@ -25,3 +25,10 @@ func TestSum(t *testing.T) {
 		}
 	})
 }
+
+func BenchmarkSum(b *testing.B) {
+	numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	for i := 0; i < b.N; i++ {
+		Sum(numbers)
+	}
+}
