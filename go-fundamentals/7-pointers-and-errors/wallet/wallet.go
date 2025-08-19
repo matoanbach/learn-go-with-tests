@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+var ErrInsufficientFunds = errors.New("cannot withdraw, insufficient funds")
+
 type Bitcoint int
 
 type Stringer interface {
@@ -21,7 +23,7 @@ type Wallet struct {
 
 func (w *Wallet) Withdraw(amount Bitcoint) error {
 	if w.balance-amount < 0 {
-		return errors.New("cannot withdraw, insufficient funds")
+		return ErrInsufficientFunds
 	}
 
 	w.balance -= amount
