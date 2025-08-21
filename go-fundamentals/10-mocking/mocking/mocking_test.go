@@ -1,1 +1,18 @@
 package mocking
+
+import (
+	"bytes"
+	"testing"
+)
+
+func TestCountdown(t *testing.T) {
+	buffer := &bytes.Buffer{}
+	Countdown(buffer)
+
+	got := buffer.String()
+	want := "Print 3, 2, 1 and Go!"
+
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
+}
