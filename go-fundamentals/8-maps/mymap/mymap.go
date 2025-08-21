@@ -35,6 +35,16 @@ func (d Dictionary) Update(key, newVal string) error {
 	return nil
 }
 
+func (d Dictionary) Delete(key string) error {
+	_, err := d.Search(key)
+	if err != nil {
+		return err
+	}
+
+	delete(d, key)
+	return nil
+}
+
 type DictionaryErr string
 
 func (e DictionaryErr) Error() string {
