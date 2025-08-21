@@ -2,8 +2,9 @@ package main
 
 import (
 	"main/mocking"
+	"os"
 )
 
 func main() {
-	mocking.Countdown()
+	mocking.Countdown(os.Stdout)
 }
