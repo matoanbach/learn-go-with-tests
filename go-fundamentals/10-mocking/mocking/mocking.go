@@ -1,9 +1,12 @@
 package mocking
 
-import "fmt"
+import (
+	"fmt"
+	"io"
+)
 
-func Countdown() {
-	for _, s := range []string{"Print ", "3, ", "2, ", "1, ", "and ", "Go!", "\n"} {
-		fmt.Print(s)
+func Countdown(w io.Writer) {
+	for _, s := range []string{"Print ", "3, ", "2, ", "1 ", "and ", "Go!"} {
+		fmt.Fprintf(w, "%s", s)
 	}
 }
