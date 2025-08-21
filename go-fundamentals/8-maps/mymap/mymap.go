@@ -25,6 +25,16 @@ func (d Dictionary) Add(key, val string) error {
 	return nil
 }
 
+func (d Dictionary) Update(key, newVal string) error {
+	_, err := d.Search(key)
+	if err != nil {
+		return err
+	}
+	d[key] = newVal
+
+	return nil
+}
+
 type DictionaryErr string
 
 func (e DictionaryErr) Error() string {
