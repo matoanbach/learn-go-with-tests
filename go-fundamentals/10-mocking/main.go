@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	mocking.Countdown(os.Stdout)
+	mocking.Countdown(os.Stdout, mocking.RealSleep{})
 }
